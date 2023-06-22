@@ -14,9 +14,9 @@ pub fn capitalize_first(input: &str) -> String {
     match c.next() {
         None => String::new(),
         Some(first) => {
-            let mut result = String::from(first.to_uppercase().next().unwrap());
-            result.push_str(c.as_str());
-            result            
+            let mut result = first.to_uppercase().to_string();
+            result.extend(c);
+            result  
         },
     }
 }
